@@ -33,12 +33,14 @@ def update_quantity(inventory_list):
     for item in inventory_list:
         if item['id'] == item_id:
             print(f'Tìm thấy hàng hóa: {item['name']} (Số lượng hiện tại: {item['quantity']})')
-            inventory_list['quantity'] = input("Nhập số lượng mới: ")
+            item['quantity'] = int(input("Nhập số lượng mới: "))
             print("Cập nhật số lượng thành công!")
             return
-        print(f'Không tìm thấy hàng hóa có mã [{item_id}]!')
+        else : 
+            continue
+        # print(f'Không tìm thấy hàng hóa có mã [{item_id}]!')
             
-    
+
 while True:
     print('''
 ---- NHẬP HÀNG HÓA MỚI ----
